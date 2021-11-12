@@ -22,8 +22,8 @@ fun main() {
 fun largerNumber(num1: Int, num2: Int): Int {
     return max(num1, num2)
 }
-// 函数语法糖
-fun smallerNumber(num1: Int, num2: Int): Int = min(num1, num2)
+// 函数语法糖(含返回值类型推导)
+fun smallerNumber(num1: Int, num2: Int) = min(num1, num2)
 
 class LearnKotlin {
 
