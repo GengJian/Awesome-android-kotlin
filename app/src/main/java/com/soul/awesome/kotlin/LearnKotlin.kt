@@ -15,7 +15,7 @@ fun main() {
     println("larger number is " + value1)
 
     val value2 = smallerNumber(a,b)
-    println("smaller number is " + value2)
+    println("smaller number is $value2")
 }
 
 // 函数写法
