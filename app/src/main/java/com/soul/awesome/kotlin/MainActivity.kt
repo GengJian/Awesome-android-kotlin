@@ -5,6 +5,7 @@ package com.soul.awesome.kotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 
@@ -14,7 +15,11 @@ const val EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 在布局文件中编写界面，然后通过setContentView引入进来
         setContentView(R.layout.activity_main)
+        // 测试日志级别 v < d < i < w < e
+        Log.d("😊 MainActivity", "😊 onCreate: execute")
+        Log.e("😂 MainActivity", "😂 onCreate: execute")
     }
 
     /*点击页面的Send按钮*/
