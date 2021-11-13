@@ -31,32 +31,13 @@ fun main() {
 //    // 测试单例
 //    Singleton.singletonTest()
 
-    testList()
+//    testList()
+//    testSet()
+    testMap()
 
 }
 
-private fun testMethod() {
-//    // 通过调用主构造函数，并设置初始值
-//    val student1 = Student("Jack", 19)
-//    // 调用次构造函数
-//    val student2 = Student("a123", 5, "Lily", 18)
-//    // 不带参构造函数
-//    val student3 = Student()
-//
-//    doStudy(student1)
-//    doStudy(student2)
-}
-
-private fun testDataObject() {
-//    val cellphone1 = CellphoneModel("Samsung", 1299.99)
-//    val cellphone2 = CellphoneModel("HUAWEI", 4388.88)
-//    val cellphone3 = CellphoneModel("Samsung", 1299.99)
-//
-//    println(cellphone2)
-//    println("cellphone1 equals cellphone3 " + cellphone1.equals(cellphone3))
-}
 //</editor-fold>
-
 
 //<editor-fold desc="测试实例函数">
 
@@ -85,10 +66,33 @@ fun getScore2(name: String) = when {
     else -> 0
 }
 
+private fun testMethod() {
+//    // 通过调用主构造函数，并设置初始值
+//    val student1 = Student("Jack", 19)
+//    // 调用次构造函数
+//    val student2 = Student("a123", 5, "Lily", 18)
+//    // 不带参构造函数
+//    val student3 = Student()
+//
+//    doStudy(student1)
+//    doStudy(student2)
+}
+
+// 测试接口实现
 fun doStudy(student: Student) {
     println("-- someone do study -- ")
     student.readBooks()
     student.doHomeworks()
+}
+
+// 测试单例实现
+private fun testDataObject() {
+//    val cellphone1 = CellphoneModel("Samsung", 1299.99)
+//    val cellphone2 = CellphoneModel("HUAWEI", 4388.88)
+//    val cellphone3 = CellphoneModel("Samsung", 1299.99)
+//
+//    println(cellphone2)
+//    println("cellphone1 equals cellphone3 " + cellphone1.equals(cellphone3))
 }
 
 fun testList() {
@@ -108,5 +112,25 @@ fun testList() {
     }
 
 }
+
+fun testSet() {
+    val set = setOf<String>("Apple", "Pear", "Apple", "Orange")
+    for (fruit in set) {
+        println(fruit)
+    }
+}
+
+fun testMap() {
+    val map = mapOf(
+        "Apple" to 1,
+        "Pear" to 2,
+        "Banana" to 3
+    )
+    for (fruit in map) {
+        println(fruit)
+    }
+}
+
+
 //</editor-fold>
 
