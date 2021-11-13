@@ -21,15 +21,23 @@ fun main() {
 //    println(getScore1("Jim"))
 //    println(getScore2("Tommy"))
 
-    // 通过调用主构造函数，并设置初始值
-    val student1 = Student("Jack", 19)
-    // 调用次构造函数
-    val student2 = Student("a123", 5, "Lily", 18)
-    // 不带参构造函数
-    val student3 = Student()
+//    // 通过调用主构造函数，并设置初始值
+//    val student1 = Student("Jack", 19)
+//    // 调用次构造函数
+//    val student2 = Student("a123", 5, "Lily", 18)
+//    // 不带参构造函数
+//    val student3 = Student()
+//
+//    doStudy(student1)
+//    doStudy(student2)
 
-    doStudy(student1)
-    doStudy(student2)
+    //测试数据类
+    val cellphone1 = CellphoneModel("Samsung", 1299.99)
+    val cellphone2 = CellphoneModel("HUAWEI", 4388.88)
+    val cellphone3 = CellphoneModel("Samsung", 1299.99)
+
+    println(cellphone2)
+    println("cellphone1 equals cellphone3 " + cellphone1.equals(cellphone3))
 
 }
 
