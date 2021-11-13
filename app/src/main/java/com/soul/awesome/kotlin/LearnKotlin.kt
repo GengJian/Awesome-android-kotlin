@@ -39,6 +39,9 @@ fun main() {
     println(cellphone2)
     println("cellphone1 equals cellphone3 " + cellphone1.equals(cellphone3))
 
+    // 测试单例
+    Singleton.singletonTest()
+
 }
 
 // 函数写法
