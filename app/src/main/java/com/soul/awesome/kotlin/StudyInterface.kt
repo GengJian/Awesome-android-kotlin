@@ -1,6 +1,6 @@
 package com.soul.awesome.kotlin
 
-interface Study {
+interface StudyInterface {
     fun readBooks()
     fun doHomeworks()
 
