@@ -35,9 +35,12 @@ fun main() {
 //    testSet()
 //    testMap()
 
-    // 测试函数是API:排序和过滤
-    testFilter()
+    // 测试函数式API:排序和过滤
+//    testFilter()
+    // 测试函数式API:任意和任一
+    testAnyAll()
 }
+
 
 //</editor-fold>
 
@@ -142,6 +145,13 @@ private fun testFilter() {
     for (newFruit in newList) {
         println(newFruit)
     }
+}
+
+private fun testAnyAll() {
+    val list = listOf("Apple", "Banana", "Pear", "Peach")
+    val isAny = list.any { it.length <= 5 }
+    val isAll = list.all { it.length <= 5 }
+    println("anyResult is $isAny , allResult is $isAll")
 }
 
 
