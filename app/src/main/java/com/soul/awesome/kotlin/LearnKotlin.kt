@@ -33,8 +33,10 @@ fun main() {
 
 //    testList()
 //    testSet()
-    testMap()
+//    testMap()
 
+    // 测试函数是API:排序和过滤
+    testFilter()
 }
 
 //</editor-fold>
@@ -128,6 +130,17 @@ fun testMap() {
     )
     for ((fruit, number) in map) {
         println("$fruit id No.m$number")
+    }
+}
+
+private fun testFilter() {
+    val list = listOf("apple", "pear", "peach")
+    // 先过滤再大写，最后生成新的数组
+    val newList = list
+        .filter { it.length > 4 }
+        .map { it.uppercase() }
+    for (newFruit in newList) {
+        println(newFruit)
     }
 }
 
