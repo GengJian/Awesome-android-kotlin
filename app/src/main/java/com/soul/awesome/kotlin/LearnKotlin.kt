@@ -126,8 +126,8 @@ fun testMap() {
         "Pear" to 2,
         "Banana" to 3
     )
-    for (fruit in map) {
-        println(fruit)
+    for ((fruit, number) in map) {
+        println("$fruit id No.m$number")
     }
 }
 
