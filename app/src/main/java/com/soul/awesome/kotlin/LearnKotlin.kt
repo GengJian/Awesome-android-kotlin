@@ -6,20 +6,28 @@ import kotlin.math.min
 fun main() {
     println("Hello Kotlin!")
 
-    // 声明变量（带类型）
-    val a: Int = 99
-    // 简写变量（推导类型）
-    val b = 108
+//    // 声明变量（带类型）
+//    val a: Int = 99
+//    // 简写变量（推导类型）
+//    val b = 108
+//
+//    val value1 = largerNumber(a, b)
+//    println("larger number is " + value1)
+//
+//    val value2 = smallerNumber(a, b)
+//    println("smaller number is $value2")
+//
+//    // 测试When 写法
+//    println(getScore1("Jim"))
+//    println(getScore2("Tommy"))
 
-    val value1 = largerNumber(a, b)
-    println("larger number is " + value1)
+    // 通过调用主构造函数，并设置初始值
+    val student1 = Student("Jack", 19)
+    // 调用次构造函数
+    val student2 = Student("a123", 5, "Jack", 18)
+    // 不带参构造函数
+    val student3 = Student()
 
-    val value2 = smallerNumber(a, b)
-    println("smaller number is $value2")
-
-    // 测试When 写法
-    println(getScore1("Jim"))
-    println(getScore2("Tommy"))
 }
 
 // 函数写法
@@ -45,9 +53,5 @@ fun getScore2(name: String) = when {
     name == "Jack" -> 95
     name == "Lily" -> 100
     else -> 0
-}
-
-class LearnKotlin {
-
 }
 
