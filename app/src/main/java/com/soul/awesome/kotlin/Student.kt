@@ -1,7 +1,8 @@
 package com.soul.awesome.kotlin
 
-// 主构造函数 可以在实例化时 初始化属性
-open class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(name, age) {
+// 继承Person主构造函数 可以在实例化时 初始化属性
+// 实现接口 Study
+open class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(name, age), Study {
     init {
         println("-- 实例化Student --")
         println("sno is $sno")
@@ -18,5 +19,13 @@ open class Student(val sno: String, val grade: Int, name: String, age: Int) : Pe
 
     // 次构造函数（无参）
     constructor(): this("",0,"",0)
+
+    override fun readBooks() {
+        println(name + " is reading.")
+    }
+
+    override fun doHomeworks() {
+        println(name + " is doing homeworks.")
+    }
 
 }

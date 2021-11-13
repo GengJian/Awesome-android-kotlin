@@ -24,9 +24,12 @@ fun main() {
     // 通过调用主构造函数，并设置初始值
     val student1 = Student("Jack", 19)
     // 调用次构造函数
-    val student2 = Student("a123", 5, "Jack", 18)
+    val student2 = Student("a123", 5, "Lily", 18)
     // 不带参构造函数
     val student3 = Student()
+
+    doStudy(student1)
+    doStudy(student2)
 
 }
 
@@ -53,5 +56,11 @@ fun getScore2(name: String) = when {
     name == "Jack" -> 95
     name == "Lily" -> 100
     else -> 0
+}
+
+fun doStudy(student: Student) {
+    println("-- someone do study -- ")
+    student.readBooks()
+    student.doHomeworks()
 }
 
