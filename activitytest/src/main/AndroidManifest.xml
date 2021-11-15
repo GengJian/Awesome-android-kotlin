@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.soul.awesome.activitytest">
 
     <application
@@ -9,29 +10,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Awesomeandroidkotlin">
-
         <activity
-            android:name=".FirstActivity"
-            android:exported="true"
-            android:label="This is FirstActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".ThirdActivity"
+            android:exported="false" >
+        <intent-filter tools:ignore="AppLinkUrlError">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:scheme="https" />
+        </intent-filter>
+    </activity>
 
-        <activity
-            android:name=".SecondActivity"
-            android:exported="true"
-            android:label="This is SecondActivity">
-            <intent-filter>
-                <action android:name="com.soul.awesome.activitytest.ACTION_START" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.MY_CATEGORY" />
-            </intent-filter>
-        </activity>
+    <activity
+        android:name=".SecondActivity"
+        android:exported="true"
+        android:label="This is SecondActivity">
+        <intent-filter>
+            <action android:name="com.soul.awesome.activitytest.ACTION_START" />
 
-    </application>
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.MY_CATEGORY" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name=".FirstActivity"
+        android:exported="true"
+        android:label="This is FirstActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-</manifest>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
 
+    </manifest>
