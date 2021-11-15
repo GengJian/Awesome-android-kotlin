@@ -3,6 +3,7 @@ package com.soul.awesome.activitytest
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -32,7 +33,7 @@ class FirstActivity : AppCompatActivity() {
 //            intent.addCategory("com.soul.awesome.activitytest.MY_CATEGORY")
             // 3.双向参数
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("extra_data","携带参数")
+            intent.putExtra("extra_data", "携带参数")
             // ================
             // 1.执行跳转
 //            startActivity(intent)
@@ -61,6 +62,7 @@ class FirstActivity : AppCompatActivity() {
         return true
     }
 
+    // 重写菜单中按钮响应方法
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.add_item -> Toast.makeText(this, "You clicked Add ", Toast.LENGTH_SHORT).show()
@@ -68,5 +70,13 @@ class FirstActivity : AppCompatActivity() {
                 .show()
         }
         return true
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val returnMsg = data ?. getStringExtra("data_return")
+        when (resultCode) {
+            RESULT_OK -> Log.e("FirstActivity", "returned Data is $returnMsg")
+        }
     }
 }
