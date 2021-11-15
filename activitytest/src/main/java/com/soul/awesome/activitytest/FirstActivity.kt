@@ -23,15 +23,21 @@ class FirstActivity : AppCompatActivity() {
 
         // Kotlin直接实例
         button1.setOnClickListener {
-            Toast.makeText(this, "You clicked Button 1 ", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "You clicked Button 1 ", Toast.LENGTH_SHORT).show()
 
-            // 显式调用跳转
+            // 1.显式调用跳转
 //            val intent = Intent(this, SecondActivity::class.java)
-            // 隐式调用跳转
-            val intent = Intent("com.soul.awesome.activitytest.ACTION_START")
-            intent.addCategory("com.soul.awesome.activitytest.MY_CATEGORY")
-            // 执行跳转
-            startActivity(intent)
+            // 2.隐式调用跳转
+//            val intent = Intent("com.soul.awesome.activitytest.ACTION_START")
+//            intent.addCategory("com.soul.awesome.activitytest.MY_CATEGORY")
+            // 3.双向参数
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("extra_data","携带参数")
+            // ================
+            // 1.执行跳转
+//            startActivity(intent)
+            // 2.跳转携带函数
+            startActivityForResult(intent, 1)
         }
 
         button2.setOnClickListener {
