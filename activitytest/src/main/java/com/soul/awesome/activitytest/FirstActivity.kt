@@ -1,10 +1,12 @@
 package com.soul.awesome.activitytest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.soul.awesome.activitytest.SecondActivity
 import kotlinx.android.synthetic.main.first_layout.*
 
 class FirstActivity : AppCompatActivity() {
@@ -21,6 +23,9 @@ class FirstActivity : AppCompatActivity() {
         // Kotlin直接实例
         button1.setOnClickListener {
             Toast.makeText(this, "You clicked Button 1 ", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Awesomeandroidkotlin">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false"
+            android:label="@string/title_activity_second" />
+        <activity
             android:name=".FirstActivity"
             android:exported="true"
             android:label="This is FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
