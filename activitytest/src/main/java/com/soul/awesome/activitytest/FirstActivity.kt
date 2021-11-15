@@ -1,6 +1,7 @@
 package com.soul.awesome.activitytest
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -24,7 +25,19 @@ class FirstActivity : AppCompatActivity() {
         button1.setOnClickListener {
             Toast.makeText(this, "You clicked Button 1 ", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, SecondActivity::class.java)
+            // 显式调用跳转
+//            val intent = Intent(this, SecondActivity::class.java)
+            // 隐式调用跳转
+            val intent = Intent("com.soul.awesome.activitytest.ACTION_START")
+            intent.addCategory("com.soul.awesome.activitytest.MY_CATEGORY")
+            // 执行跳转
+            startActivity(intent)
+        }
+
+        button2.setOnClickListener {
+            // 唤起网页
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.baidu.com")
             startActivity(intent)
         }
     }

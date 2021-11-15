@@ -8,5 +8,18 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="手动创建按钮 Button1" />
+        android:text="跳转到原生页面Second" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="唤起浏览器打开web" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手动创建按钮 Button3" />
+
 </LinearLayout>

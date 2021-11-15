@@ -9,20 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Awesomeandroidkotlin">
-        <activity
-            android:name=".SecondActivity"
-            android:exported="false"
-            android:label="@string/title_activity_second" />
+
         <activity
             android:name=".FirstActivity"
             android:exported="true"
             android:label="This is FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true"
+            android:label="This is SecondActivity">
+            <intent-filter>
+                <action android:name="com.soul.awesome.activitytest.ACTION_START" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
+
