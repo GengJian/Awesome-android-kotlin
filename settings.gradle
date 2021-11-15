@@ -7,5 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Awesome-android-kotlin"
-include ':app'
+//include ':app'
 include ':activitytest'
