@@ -20,6 +20,6 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="手动创建按钮 Button3" />
+        android:text="唤起tel拨打电话" />
 
 </LinearLayout>

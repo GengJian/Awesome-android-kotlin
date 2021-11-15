@@ -40,6 +40,13 @@ class FirstActivity : AppCompatActivity() {
             intent.data = Uri.parse("https://www.baidu.com")
             startActivity(intent)
         }
+
+        button3.setOnClickListener {
+            // 拨打电话
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:10086")
+            startActivity(intent)
+        }
     }
 
     // 重写方法，快捷键Control+O
