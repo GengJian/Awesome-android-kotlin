@@ -7,22 +7,15 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:text="button 1" />
+        android:layout_weight="1"
+        android:hint="type something" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="button 2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="button 3" />
+        android:text="Send" />
 
 </LinearLayout>
