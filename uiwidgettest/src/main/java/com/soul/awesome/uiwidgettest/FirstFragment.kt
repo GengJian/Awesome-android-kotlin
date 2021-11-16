@@ -1,15 +1,14 @@
 package com.soul.awesome.uiwidgettest
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.soul.awesome.uiwidgettest.databinding.FragmentFirstBinding
 
@@ -49,6 +48,7 @@ class FirstFragment : Fragment(), View.OnClickListener {
         binding.button.setOnClickListener(this)
         binding.changeImageButton.setOnClickListener(this)
         binding.changeProgressButton.setOnClickListener(this)
+        binding.dialogButton.setOnClickListener(this)
     }
 
     override fun onDestroyView() {
@@ -75,6 +75,22 @@ class FirstFragment : Fragment(), View.OnClickListener {
                     progress.visibility = View.GONE
                 } else {
                     progress.visibility = View.VISIBLE
+                }
+            }
+            R.id.dialogButton -> {
+                Log.d("FirstFragment", "dialogButton通过接口响应OnClick方法")
+                AlertDialog.Builder(this.activity).apply {
+                    setTitle("This is a Dialog.")
+                    setMessage("Something is import.")
+                    setCancelable(false) // 点击背景板关闭
+                    setPositiveButton("OK"){  dialog, which ->
+
+                    }
+                    setNegativeButton("Cancel") { dialog, which ->
+
+                    }
+
+                    show()
                 }
             }
         }

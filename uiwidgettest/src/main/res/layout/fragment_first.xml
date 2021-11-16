@@ -55,6 +55,11 @@
         android:text="展示/隐藏菊花图"
         android:textAllCaps="false" />
 
-    
+    <Button
+        android:id="@+id/dialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示弹窗"
+        android:textAllCaps="false" />
 
 </LinearLayout>
