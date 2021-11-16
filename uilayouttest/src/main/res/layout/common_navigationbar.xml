@@ -5,28 +5,29 @@
     android:background="@drawable/title_bg">
 
     <Button
-        android:id="@+id/navigationBackBtn"
+        android:id="@+id/navBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_margin="5dp"
         android:background="@drawable/back_bg"
         android:text="Back"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        />
 
     <TextView
-        android:id="@+id/navigationTitleLabel"
+        android:id="@+id/navTitleLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight = "1"
         android:gravity="center"
-        android:text="Titile Text"
+        android:text="Title Text"
         android:textColor="#FFF"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/navigationEditButton"
+        android:id="@+id/navEditButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
