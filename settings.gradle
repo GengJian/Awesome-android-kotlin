@@ -9,4 +9,5 @@ dependencyResolutionManagement {
 rootProject.name = "Awesome-android-kotlin"
 //include ':app'
 //include ':activitytest'
-include ':uiwidgettest'
+//include ':uiwidgettest'
+include ':uilayouttest'
