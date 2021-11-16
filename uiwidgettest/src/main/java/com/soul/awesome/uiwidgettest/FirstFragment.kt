@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
@@ -47,6 +48,7 @@ class FirstFragment : Fragment(), View.OnClickListener {
         // B.通过接口实现
         binding.button.setOnClickListener(this)
         binding.changeImageButton.setOnClickListener(this)
+        binding.changeProgressButton.setOnClickListener(this)
     }
 
     override fun onDestroyView() {
@@ -63,8 +65,17 @@ class FirstFragment : Fragment(), View.OnClickListener {
                 Toast.makeText(this.activity, inputText, Toast.LENGTH_SHORT).show()
             }
             R.id.changeImageButton -> {
-                Log.d("FirstFragment", "通过接口响应OnClick方法")
+                Log.d("FirstFragment", "changeImageButton通过接口响应OnClick方法")
                 binding.imageView.setImageResource(R.drawable.img_2)
+            }
+            R.id.changeProgressButton -> {
+                Log.d("FirstFragment", "ProgressButton通过接口响应OnClick方法")
+                val progress = binding.progressBar
+                if (progress.visibility == View.VISIBLE) {
+                    progress.visibility = View.GONE
+                } else {
+                    progress.visibility = View.VISIBLE
+                }
             }
         }
     }

@@ -23,13 +23,6 @@
         android:text="@string/next"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/changeImageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="切换图片"
-        android:textAllCaps="false" />
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
@@ -37,9 +30,31 @@
         android:hint="hint 相当于 placeholder"
         android:maxLines="2" />
 
+    <Button
+        android:id="@+id/changeImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="切换图片"
+        android:textAllCaps="false" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/img_1"/>
+        android:src="@drawable/img_1" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/changeProgressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示/隐藏菊花图"
+        android:textAllCaps="false" />
+
+    
+
 </LinearLayout>
