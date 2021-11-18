@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
@@ -16,11 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         sendRquestButton.setOnClickListener {
-            sendRequestWithHttpURLConnect()
+//            sendRequestWithHttpURLConnect()
+            sendRequestWithOKHttp()
         }
 
     }
 
+    // 通过系统自带的HttpURLConnection实现一个GET请求
     fun sendRequestWithHttpURLConnect() {
         // 开启线程发起网络请求
         thread {
@@ -47,6 +51,27 @@ class MainActivity : AppCompatActivity() {
                 e.printStackTrace()
             } finally {
                 connection?.disconnect()
+            }
+        }
+    }
+
+    // 通过OKHttp框架请求
+    fun sendRequestWithOKHttp() {
+        thread {
+            try {
+                val client = OkHttpClient()
+                val request = Request.Builder()
+                    .url("https://www.baidu.com")
+                    .build()
+                val response = client.newCall(request).execute()
+                val responseData = response.body?.string()
+                if (responseData != null) {
+                    showResponse(responseData)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+
             }
         }
     }
