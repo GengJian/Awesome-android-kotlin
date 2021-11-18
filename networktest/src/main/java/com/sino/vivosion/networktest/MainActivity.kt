@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
+import okhttp3.Callback
 import java.io.BufferedReader
+import java.io.IOException
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
@@ -19,7 +20,21 @@ class MainActivity : AppCompatActivity() {
 
         sendRquestButton.setOnClickListener {
 //            sendRequestWithHttpURLConnect()
-            sendRequestWithOKHttp()
+//            sendRequestWithOKHttp()
+            sendRequestWithOKHttpWithCallBack(object : Callback {
+                override fun onResponse(call: Call, response: Response) {
+                    // 得到服务器的返回内容
+                    var responseData = response.body?.string()
+                    if (responseData != null) {
+                        showResponse(responseData)
+                    }
+                }
+
+                override fun onFailure(call: Call, e: IOException) {
+                    // 异常情况处理
+                    Log.e("NetworkTest","请求失败")
+                }
+            })
         }
 
     }
@@ -73,6 +88,18 @@ class MainActivity : AppCompatActivity() {
             } finally {
 
             }
+        }
+    }
+
+    // 通过OKHttp并异步回调响应数据
+    fun sendRequestWithOKHttpWithCallBack(callback: Callback) {
+        thread {
+            val client = OkHttpClient()
+            val request = Request.Builder()
+                .url("https://www.baidu.com")
+                .build()
+
+            client.newCall(request).enqueue(callback)
         }
     }
 
