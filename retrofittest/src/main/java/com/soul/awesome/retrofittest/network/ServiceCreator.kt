@@ -15,20 +15,21 @@ class ServiceCreator {
     }
 
     // 实例化OKHttp
-    val httpClient = OkHttpClient.Builder().apply {
+    private val httpClient = OkHttpClient.Builder().apply {
         //添加日志拦截器
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             addInterceptor(logging)
         }
-    }
+
+    }.build()
 
     // 实例化Retrofit对象
     private val retrofit = Retrofit.Builder()
-        .baseUrl(Companion.HOST_URL)
+        .baseUrl(HOST_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(null)
+        .client(httpClient)
         .build()
 
     // 便于获取Service的动态代理对象
