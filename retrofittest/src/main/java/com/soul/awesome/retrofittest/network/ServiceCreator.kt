@@ -12,17 +12,17 @@ class ServiceCreator {
     // 静态方法&常量
     companion object {
         // Retrofit2中要求baseURL必须以/斜线结束，消除歧义
-        private const val HOST_URL = "http://api-t.sino-beta.com/"
+        private const val HOST_URL = "https://www.wanandroid.com/"
     }
 
     // 实例化OKHttp
     private val httpClient = OkHttpClient.Builder().apply {
-        //添加日志拦截器
-        if (BuildConfig.DEBUG) {
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BODY
-            addInterceptor(logging)
-        }
+//        //添加日志拦截器
+//        if (BuildConfig.DEBUG) {
+//            val logging = HttpLoggingInterceptor()
+//            logging.level = HttpLoggingInterceptor.Level.BODY
+//            addInterceptor(logging)
+//        }
 
     }.build()
 

@@ -3,8 +3,14 @@ package com.soul.awesome.retrofittest
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.soul.awesome.retrofittest.network.ServiceCreator
+import com.soul.awesome.retrofittest.network.UserInfoService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,25 +25,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun requestLogin() {
-//        val userInfoService = ServiceCreator.create<UserInfoService>()
-//        userInfoService.signIn("329@test.com", "123456")
-//            .enqueue(object : Callback<VSResponseModel<LoginResponseData>> {
-//                override fun onResponse(
-//                    call: Call<VSResponseModel<LoginResponseData>>,
-//                    response: Response<VSResponseModel<LoginResponseData>>
-//                ) {
-//                    Log.d("LoginTableFragment", "登录请求成功，返回 $response")
-//                }
-//
-//                override fun onFailure(
-//                    call: Call<VSResponseModel<LoginResponseData>>,
-//                    t: Throwable
-//                ) {
-//                    Log.d("LoginTableFragment", "登录请示失败")
-//                    t.printStackTrace()
-//                }
-//
-//            })
+    private fun requestLogin() {
+        val userInfoData = ServiceCreator().create<UserInfoService>()
+        CoroutineScope(Dispatchers.IO).launch {
+            val result = userInfoData.signUp("test12345671111","123456","123456")
+            withContext(Dispatchers.Main) {
+                Toast.makeText(this@MainActivity, "result is $result and nickname is ${result.data?.nickname}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }
