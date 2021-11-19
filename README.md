@@ -6,3 +6,4 @@
 1. app
 2. uiLayoutTest
 3. uiWidgetTest
+4. retrofitTest/Network
