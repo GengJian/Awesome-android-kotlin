@@ -28,13 +28,13 @@ class ServiceCreator {
     private val retrofit = Retrofit.Builder()
         .baseUrl(Companion.HOST_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(null)
+        .client(httpClient.build())
         .build()
 
     // 便于获取Service的动态代理对象
-    fun <T> creat(serviceClass: Class<T>): T = retrofit.create(serviceClass)
+    fun <T> create(serviceClass: Class<T>): T = retrofit.create(serviceClass)
 
     // 泛型实化
-    inline fun <reified T> create(): T = creat(T::class.java)
+    inline fun <reified T> create(): T = create(T::class.java)
 }
 
