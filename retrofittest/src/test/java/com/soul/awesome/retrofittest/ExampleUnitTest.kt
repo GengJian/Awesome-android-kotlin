@@ -1,4 +1,4 @@
-package com.sino.vivosion.networktest
+package com.soul.awesome.retrofittest
 
 import org.junit.Test
 

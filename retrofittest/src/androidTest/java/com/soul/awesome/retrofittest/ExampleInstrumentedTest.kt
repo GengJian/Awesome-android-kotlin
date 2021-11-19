@@ -1,4 +1,4 @@
-package com.sino.vivosion.networktest
+package com.soul.awesome.retrofittest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.sino.vivosion.networktest", appContext.packageName)
+        assertEquals("com.soul.awesome.retrofittest", appContext.packageName)
     }
 }
