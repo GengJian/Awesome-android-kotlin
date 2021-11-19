@@ -6,6 +6,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// Retrofit 构建器，创建接口动态代理
 class ServiceCreator {
 
     // 静态方法&常量
