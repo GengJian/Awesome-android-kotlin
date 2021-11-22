@@ -11,4 +11,5 @@ rootProject.name = "Awesome-android-kotlin"
 //include ':activitytest'
 //include ':uiwidgettest'
 //include ':uilayouttest'
-include ':retrofittest'
+//include ':retrofittest'
+include ':listviewtest'
