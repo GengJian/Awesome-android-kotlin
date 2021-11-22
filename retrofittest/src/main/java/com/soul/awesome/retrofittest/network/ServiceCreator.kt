@@ -17,13 +17,12 @@ class ServiceCreator {
 
     // 实例化OKHttp
     private val httpClient = OkHttpClient.Builder().apply {
-//        //添加日志拦截器
-//        if (BuildConfig.DEBUG) {
-//            val logging = HttpLoggingInterceptor()
-//            logging.level = HttpLoggingInterceptor.Level.BODY
-//            addInterceptor(logging)
-//        }
-
+        //添加日志拦截器
+        if (BuildConfig.DEBUG) {
+            val logging = HttpLoggingInterceptor()
+            logging.level = HttpLoggingInterceptor.Level.BODY
+            addInterceptor(logging)
+        }
     }.build()
 
     // 实例化Retrofit对象
