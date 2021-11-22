@@ -28,7 +28,7 @@ class FruitAdapter(val fruitList: List<Fruit>) : RecyclerView.Adapter<FruitAdapt
     }
 
     override fun getItemCount(): Int {
-        fruitList.size
+        return fruitList.size
     }
 
 }
